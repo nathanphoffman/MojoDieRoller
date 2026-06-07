@@ -11,7 +11,7 @@ comptime MODE_MEDIAN = "MODE_MEDIAN"
 comptime MODE_MAX = "MODE_MAX"
 comptime MODE_MIN = "MODE_MIN"
 
-comptime JOBS_PER_CORE = 2
+comptime JOBS_PER_CORE = 3
 
 
 @fieldwise_init
@@ -85,7 +85,6 @@ fn batch_roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
         last_result_using_remaining_dice = Optional(roll_dice(mode, sides, remaining_dice)) 
         return merge_results(results, last_result_using_remaining_dice)
 
- 
 fn merge_results(results: List[Result], final_result: Optional[Result] = None) -> Result:
 
     var combined_result = Result.create_default()
