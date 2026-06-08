@@ -16,10 +16,8 @@ fn main():
     print("Hello, World!")
 
     var modes = [enMode.MODE_SUM, enMode.MODE_MIN, enMode.MODE_MAX]
-    #var dice_results = roll_dice(modes, 6, 100)
-    #print("Sum: ", dice_results.sum, "Max: ", dice_results.max)
 
-    var final_result = batch_roll_dice(modes, 6, 40000000)
+    var final_result = batch_roll_dice(modes, 6, 20)
     print("sum is ", final_result.sum)
 
 
