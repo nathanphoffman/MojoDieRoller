@@ -5,12 +5,20 @@
             "type": "mojo-lldb",
             "request": "launch",
             "name": "Debug main.mojo",
-            "mojoFile": "${workspaceFolder}/main.mojo",
-            "args": [],
-            "env": [],
+            "program": "${workspaceFolder}/.venv/lib/python3.14/site-packages/modular/bin/mojo",
+            "args": ["run", "-O0", "--debug-level=full", "${workspaceFolder}/main.mojo"],
             "cwd": "${workspaceFolder}",
+            "debuggerRoot": "${workspaceFolder}",
+            "modularHomePath": "/home/nate/.config/modular",
+            "mojoDriverPath": "${workspaceFolder}/.venv/lib/python3.14/site-packages/modular/bin/mojo",
+            "modularConfigMojoSection": "mojo-max",
             "runInTerminal": false,
-            "modularHomePath": "${workspaceFolder}/.venv"
+            "env": [
+                "MODULAR_MOJO_MAX_IMPORT_PATH=${workspaceFolder}/.venv/lib/python3.14/site-packages/modular/lib/mojo",
+                "MODULAR_MOJO_MAX_PACKAGE_ROOT=${workspaceFolder}/.venv/lib/python3.14/site-packages/modular",
+                "MODULAR_MAX_PACKAGE_ROOT=${workspaceFolder}/.venv/lib/python3.14/site-packages/modular",
+                "MODULAR_MOJO_MAX_DRIVER_PATH=${workspaceFolder}/.venv/lib/python3.14/site-packages/modular/bin/mojo"
+            ]
         }
     ]
 }
