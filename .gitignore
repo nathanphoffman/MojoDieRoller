@@ -1,3 +1,9 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# virtual env
+.venv/
+
+# generated debug config (run ./setup.sh to create)
+.vscode/modular.cfg

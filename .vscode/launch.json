@@ -9,7 +9,7 @@
             "args": ["run", "-O0", "--debug-level=full", "${workspaceFolder}/main.mojo"],
             "cwd": "${workspaceFolder}",
             "debuggerRoot": "${workspaceFolder}",
-            "modularHomePath": "/home/nate/.config/modular",
+            "modularHomePath": "${workspaceFolder}/.vscode",
             "mojoDriverPath": "${workspaceFolder}/.venv/lib/python3.14/site-packages/modular/bin/mojo",
             "modularConfigMojoSection": "mojo-max",
             "runInTerminal": false,
