@@ -7,3 +7,6 @@
 
 # generated debug config (run ./setup.sh to create)
 .vscode/modular.cfg
+
+# mojo LSP/compiler cache (written by modularHomePath in launch.json)
+.vscode/cache/
