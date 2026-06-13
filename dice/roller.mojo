@@ -4,7 +4,7 @@ from types.enMode import enMode
 
 comptime START_AT_ONE = 1
 
-fn roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
+def roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
     var sum: Int64 = 0
     var median: Int64 = 0
     var max: Int64 = 0
@@ -27,7 +27,7 @@ fn roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
     return Result(sum, median, max, min)
 
 
-fn random(sides: Int8) -> Int64:
+def random(sides: Int8) -> Int64:
     seed()
     var rand = random_si64(START_AT_ONE, Int64(sides))
     return rand

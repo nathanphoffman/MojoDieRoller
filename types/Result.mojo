@@ -7,10 +7,10 @@ struct Result(Copyable, ImplicitlyCopyable):
     var min: Int64
 
     @staticmethod
-    fn create_default() -> Result:
+    def create_default() -> Result:
         return Result(0,0,0,0)
 
-    fn merge_into(mut self, merge_with: Result):
+    def merge_into(mut self, merge_with: Result):
         self.sum += merge_with.sum
 
         var max_is_unset = 0
@@ -23,7 +23,7 @@ struct Result(Copyable, ImplicitlyCopyable):
             self.min = merge_with.min
 
 
-fn merge_results(results: List[Result], final_result: Optional[Result] = None) -> Result:
+def merge_results(results: List[Result], final_result: Optional[Result] = None) -> Result:
 
     var combined_result = Result.create_default()
 

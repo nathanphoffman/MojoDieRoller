@@ -6,7 +6,7 @@ from types.Result import merge_results
 
 comptime JOBS_PER_CORE = 3
 
-fn batch_roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
+def batch_roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
     var cores = num_physical_cores()
     var jobs_to_spawn = cores * JOBS_PER_CORE
     var number_of_dice_per_job = get_number_of_dice_per_job(
@@ -20,7 +20,7 @@ fn batch_roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
         results.append(Result(0, 0, 0, 0))
 
     @parameter
-    fn roll_dice_in_batch(worker_id: Int):
+    def roll_dice_in_batch(worker_id: Int):
         var result = roll_dice(mode, sides, perfectly_divided_job_dice)
         results[worker_id] = result
 
@@ -34,7 +34,7 @@ fn batch_roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
         last_result_using_remaining_dice = Optional(roll_dice(mode, sides, remaining_dice)) 
         return merge_results(results, last_result_using_remaining_dice)
 
-fn get_number_of_dice_per_job(num: Int64, jobs: Int64) -> Tuple[Int64, Int64]:
+def get_number_of_dice_per_job(num: Int64, jobs: Int64) -> Tuple[Int64, Int64]:
     var lowest_num_of_dice = num // jobs
     var remainder_of_dice = num % jobs
 

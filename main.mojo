@@ -12,7 +12,7 @@ struct SingleDiceBatch:
     var sides: Int8
     var rolls: Int64
 
-fn main():
+def main():
     print("Hello, World!")
 
     var modes = [enMode.MODE_SUM, enMode.MODE_MIN, enMode.MODE_MAX]
