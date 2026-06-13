@@ -1,11 +1,8 @@
 from std.random import random_float64, random_si64, random_ui64, seed
 from types.Result import Result
-
 from types.enMode import enMode
 
-
 comptime START_AT_ONE = 1
-
 
 fn roll_dice(mode: List[StaticString], sides: Int8, num: Int64) -> Result:
     var sum: Int64 = 0
